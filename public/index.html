@@ -2,41 +2,85 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
     <title>Limbera-RTL</title>
   </head>
   <body>
-    <!-- Main sidebar -->
-    <aside>
-      <ul class="side-nav fixed right-aligned blue-grey darken-4">
-
-      </ul>
-    </aside>
-    <!-- End of main sidebar -->
-
-    <!-- Wrapper around navbar & main content -->
-    <main>
-      <!-- Fixed top navbar -->
+    <div id="vue-app" :class="showSideNav ? 'sidenav-visible' : 'sidenav-hidden'">
+      <!-- Wrapper around top navbar and sidenav -->
       <header>
-        <nav>
-          <div class="nav-wrapper blue darken-1">
-            <a href="#" class="brand-logo right">Logo</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-              <li><a href="sass.html">Sass</a></li>
-              <li><a href="badges.html">Components</a></li>
-              <li><a href="collapsible.html">JavaScript</a></li>
-            </ul>
-          </div>
-        </nav>
+        <!-- Fixed top navbar -->
+        <div class="navbar-fixed">
+          <nav id="top-navbar">
+            <div class="nav-wrapper ">
+              <a href="#" class="brand-logo center">Logo</a>
+              <ul class="right topnav-right-items">
+                <li class="right">
+                  <a @click="toggleSideNav"><i class="material-icons">menu</i></a>
+                </li>
+                <li class="right">
+                  <a ><i class="material-icons">search</i></a>
+                </li>
+              </ul>
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="#">Sass</a></li>
+                <li><a href="#">Components</a></li>
+                <li><a href="#">JavaScript</a></li>
+              </ul>
+              <!-- <form>
+                <div class="input-field">
+                  <input id="search" type="search" required>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form> -->
+            </div>
+          </nav>
+        </div>
+
+        <!-- End of fixed top navbar -->
+
+        <!-- Main sidebar -->
+        <aside>
+          <ul class="side-nav fixed right-aligned">
+            <li>
+              <div class="userView">
+                <div class="background">
+                  <img src="images/sidebar-top-bg.jpg">
+                </div>
+                <a href="#!user"><img class="circle" src="images/user-profile-img.jpg"></a>
+                <a href="#!name"><span class="white-text name">John Doe</span></a>
+                <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+              </div>
+            </li>
+
+            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+          </ul>
+        </aside>
+        <!-- End of main sidebar -->
+        <div class="overlay" v-if="showSideNav" @click="toggleSideNav"></div>
       </header>
-      <!-- End of fixed top navbar -->
+      <!-- End of header wrapper -->
 
-      <!-- Main content -->
-      <div class="content">
+      <!-- Wrapper around main content -->
+      <main>
+        <!-- Main content -->
+        <div class="page-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <!-- End of main content -->
+      </main>
+      <!-- End of main wrapper -->
+    </div>
+    <!-- End of vue-app -->
 
-      </div>
-      <!-- End of main content -->
-    </main>
-    <!-- End of main wrapper -->
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
   </body>
 </html>

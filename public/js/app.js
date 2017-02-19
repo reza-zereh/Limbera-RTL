@@ -70,7 +70,23 @@
 /* 0 */
 /***/ (function(module, exports) {
 
+new Vue({
+  el: '#vue-app',
 
+  data: {
+    showSideNav: true
+  },
+
+  methods: {
+    toggleSideNav: function toggleSideNav() {
+      this.showSideNav = !this.showSideNav;
+    }
+  },
+
+  mounted: function mounted() {
+    console.log('mounted');
+  }
+});
 
 /***/ }),
 /* 1 */
