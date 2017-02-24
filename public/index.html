@@ -11,36 +11,47 @@
     <div id="vue-app" :class="showSideNav ? 'sidenav-visible' : 'sidenav-hidden'">
       <!-- Wrapper around top navbar and sidenav -->
       <header>
-        <!-- Fixed top navbar -->
-        <div class="navbar-fixed">
-          <nav id="top-navbar">
-            <div class="nav-wrapper ">
-              <a href="#" class="brand-logo center">Logo</a>
-              <ul class="right topnav-right-items">
-                <li class="right">
-                  <a @click="toggleSideNav"><i class="material-icons">menu</i></a>
-                </li>
-                <li class="right">
-                  <a ><i class="material-icons">search</i></a>
-                </li>
-              </ul>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="#">Sass</a></li>
-                <li><a href="#">Components</a></li>
-                <li><a href="#">JavaScript</a></li>
-              </ul>
-              <!-- <form>
-                <div class="input-field">
-                  <input id="search" type="search" required>
-                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                  <i class="material-icons">close</i>
-                </div>
-              </form> -->
-            </div>
-          </nav>
-        </div>
+        <div class="top-navbars">
+          <!-- Fixed top navbar -->
+          <div class="navbar-fixed" v-show="! showSearchNav">
+            <nav>
+              <div class="nav-wrapper ">
+                <a href="#" class="brand-logo center">Logo</a>
+                <ul class="right topnav-right-items">
+                  <li class="right">
+                    <a @click="toggleSideNav"><i class="material-icons">menu</i></a>
+                  </li>
+                  <li class="right">
+                    <a ><i class="material-icons" @click="toggleSearchNav">search</i></a>
+                  </li>
+                </ul>
+                <!-- <ul id="nav-mobile" class="left hide-on-med-and-down">
+                  <li><a href="#">Sass</a></li>
+                  <li><a href="#">Components</a></li>
+                  <li><a href="#">JavaScript</a></li>
+                </ul> -->
+              </div>
+            </nav>
+          </div>
+          <!-- End of fixed top navbar -->
 
-        <!-- End of fixed top navbar -->
+          <!-- Search navbar -->
+          <div class="navbar-search" v-show="showSearchNav">
+            <nav>
+              <div class="nav-wrapper">
+                <form>
+                  <div class="input-field">
+                    <input id="search" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                      <i class="material-icons" @click="toggleSearchNav">close</i>
+                  </div>
+                </form>
+              </div>
+            </nav>
+          </div>
+          <!-- End of search navbar -->
+        </div>
+        <!-- End of top-navbars -->
 
         <!-- Main sidebar -->
         <aside>

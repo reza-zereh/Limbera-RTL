@@ -74,12 +74,16 @@ new Vue({
   el: '#vue-app',
 
   data: {
-    showSideNav: true
+    showSideNav: true,
+    showSearchNav: false
   },
 
   methods: {
     toggleSideNav: function toggleSideNav() {
       this.showSideNav = !this.showSideNav;
+    },
+    toggleSearchNav: function toggleSearchNav() {
+      this.showSearchNav = !this.showSearchNav;
     }
   },
 

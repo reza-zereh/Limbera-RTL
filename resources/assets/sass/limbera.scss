@@ -7,7 +7,7 @@ body {
 
 #vue-app {
   &.sidenav-hidden {
-    #top-navbar,
+    .top-navbars,
     main {
       padding-right: 0;
     }
@@ -22,14 +22,37 @@ body {
   }
 }
 
-#top-navbar {
+.top-navbars {
   padding-right: $sidebar-width;
   transition: padding 0.5s ease-in-out;
-  background-color: $top-navbar-color;
-  
-  ul.topnav-right-items {
-    padding-right: 0;
+
+  .navbar-fixed nav {
+    background-color: $top-navbar-color;
+
+    ul.topnav-right-items {
+      padding-right: 0;
+    }
   }
+
+  .navbar-search {
+    // transform: translateY(-105%);
+    //
+    // &.searchnav-visible {
+    //   transform: translateY(0);
+    // }
+    form {
+      background-color: $search-navbar-color;
+
+      input[type=search] {
+        padding-left: 0;
+        padding-right: 4rem;
+      }
+      .material-icons {
+        color: black;
+      }
+    }
+  }
+
 }
 
 .side-nav {
@@ -62,7 +85,7 @@ main {
 }
 
 @media only screen and(max-width: 992px) {
-  #top-navbar,
+  .top-navbars,
   main {
     padding-right: 0;
   }
