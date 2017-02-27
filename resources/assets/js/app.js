@@ -4,6 +4,7 @@ new Vue({
   data: {
     showSideNav: true,
     showSearchNav: false,
+    showUserDropdownMenu: false,
   },
 
   methods: {
@@ -13,6 +14,10 @@ new Vue({
 
     toggleSearchNav() {
       this.showSearchNav = !this.showSearchNav;
+    },
+
+    toggleUserDropdownMenu() {
+      this.showUserDropdownMenu = !this.showUserDropdownMenu;
     },
   },
 

@@ -28,15 +28,46 @@
                 </ul>
                 <!-- end of right section - top navbar -->
                 <!-- left section's icons - top navbar -->
-                <ul id="nav-mobile" class="left hide-on-med-and-down__">
-                  <li>
-                    <a href="#">Sass</a>
+                <ul>
+                  <!-- user menu for top navbar -->
+                  <li class="user-menu">
+                      <a href="#" @click="toggleUserDropdownMenu" @blur="showUserDropdownMenu = false">
+                        <img class="user-profile-pic circle" src="images/user-profile-img.jpg">
+                      </a>
+                      <ul class="user-dropdown-menu dropdown-content" :class="{'user-dropdown-menu-visible': showUserDropdownMenu}">
+                        <li>
+                          <a href="#!">
+                            <i class="material-icons">account_circle</i>
+                            <span>Profile</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#!">
+                            <i class="material-icons">settings</i>
+                            <span>Setting</span>
+                          </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                          <a href="#!">
+                            <i class="material-icons">power_settings_new</i>
+                            <span>Log Out</span>
+                          </a>
+                        </li>
+                      </ul>
                   </li>
+                  <!-- End of user menu - top navbar -->
+                  <!-- Other likns in right section of top navbar -->
                   <li>
-                    <a href="#">Components</a>
+                    <a href="#">
+                      <i class="material-icons">notifications</i>
+                      <span class="badge-navbar">7</span>
+                    </a>
                   </li>
-                  <li>
-                    <a href="#">JavaScript</a>
+                  <li class="hide-on-small-only">
+                    <a href="#">
+                      <i class="material-icons">lock</i>
+                    </a>
                   </li>
                 </ul>
                 <!-- end of left section - top navbar -->
